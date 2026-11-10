@@ -1,0 +1,32 @@
+# TRACE — shared dependency pins (local macOS/arm64 · GPU pod linux/amd64, identical versions)
+#
+# torch 2.5.1's default PyPI wheel differs per platform:
+#   linux/x86_64 -> CUDA 12.4 bundled wheel  (pod A100)
+#   macOS/arm64  -> MPS-enabled wheel        (local)
+# So there is one version pin, and backend differences are absorbed only in trace/surrogates/device.py.
+
+torch==2.5.1        # MPS requires >=2.6 (TabPFN requirement). Local runs on CPU
+
+# --- surrogates ------------------------------------------------------------
+tabpfn==2.0.9       # model = TabPFN v2 (Nature 2025). **8.5.0 cannot be used**:
+                    #   8.x requires a Prior Labs account login + license acceptance
+                    #   for the weight download and dies with TabPFNLicenseError on a
+                    #   non-interactive pod (needs the TABPFN_TOKEN env var). 2.0.x fetches
+                    #   the same v2 checkpoint without an account. Our chosen model is v2, so nothing is lost.
+scikit-learn==1.5.2
+
+# --- numerics / data -------------------------------------------------------
+numpy==2.1.3
+scipy==1.14.1
+pandas==2.2.3
+pyarrow==17.0.0
+polars==1.17.1
+duckdb==1.1.3
+
+# --- stats / figures -------------------------------------------------------
+statsmodels==0.14.4
+matplotlib==3.9.2
+
+# --- runner / dev ----------------------------------------------------------
+tqdm==4.67.1
+pytest==8.3.4
