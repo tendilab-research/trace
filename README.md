@@ -1,4 +1,4 @@
-# Why Did Bayesian Optimization Recommend This Recipe?
+# Why Did Bayesian Optimization Recommend This Material Recipe?
 
 **Separating Value and Uncertainty for Each Recipe Change**
 
@@ -93,7 +93,7 @@ them. The datasets remain under their upstream licenses.
 
 ```bibtex
 @inproceedings{kim2026trace,
-  title     = {Why Did Bayesian Optimization Recommend This Recipe? Separating Value and Uncertainty for Each Recipe Change},
+  title     = {Why Did Bayesian Optimization Recommend This Material Recipe? Separating Value and Uncertainty for Each Recipe Change},
   author    = {Kim, Minseong and Lee, Junyoung and Lee, Jiwoo and Yoon, Jinwon},
   booktitle = {AI for Accelerated Materials Design (AI4Mat) Workshop at NeurIPS 2026},
   year      = {2026}
